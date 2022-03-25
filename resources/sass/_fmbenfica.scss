@@ -1,0 +1,55 @@
+//Header
+.header {
+    position: relative;
+    width   : 100%;
+
+    &__top {
+        position        : relative;
+        background-color: #DF0080;
+        padding         : .5rem 0;
+    }
+
+    &__phones {
+        position       : relative;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        height         : 100%;
+    }
+
+    &__phone {
+        position   : relative;
+        display    : flex;
+        align-items: center;
+
+        & svg {
+            margin-right: .254rem;
+        }
+
+        & span {
+            color      : #FFF;
+            font-size  : 1.5rem;
+            margin     : 0;
+            line-height: 1;
+            padding-top: 5px;
+        }
+
+    }
+
+    &__social {
+        position  : relative;
+        margin    : 0;
+        padding   : 0;
+        list-style: none;
+
+        & li {
+            display: inline;
+
+            & a,
+            & a:hover,
+            & a:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
