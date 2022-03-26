@@ -79,7 +79,8 @@ if (!function_exists('fmbenfica_setup')) {
 
 function fmbenfica_scripts()
 {
-    wp_enqueue_style('fmbenfica-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), '24032022');
+    wp_enqueue_style('fmbenfica-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), '24032022');
+    //wp_enqueue_style('fmbenfica-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), '24032022');
 
     wp_enqueue_style('fmbenfica-main-style', get_template_directory_uri() . '/assets/css/app.css', array('fmbenfica-fonts'), '24032022');
 
