@@ -82,9 +82,9 @@
             </div>
         </div>
         <div class="header__main-menu">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <img src="<?php echo get_template_directory_uri() . "/assets/images/logo.png"; ?>" class="img-fluid header__logo">
                     </a>
 
@@ -101,7 +101,7 @@
                                 <a class="nav-link" href="#">Notícias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Seja Patrocinador</a>
+                                <a class="nav-link" href="/seja-um-patrocinador">Seja Patrocinador</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">A Rádio Benfica</a>

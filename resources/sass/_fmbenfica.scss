@@ -432,3 +432,121 @@
         }
     }
 }
+
+.sponsor-page {
+    .sponsor__hero {
+        position           : relative;
+        display            : flex;
+        align-items        : end;
+        height             : calc(100vh - 150px);
+        width              : 100%;
+        background-repeat  : no-repeat;
+        background-position: 100% 65%;
+        background-size    : cover;
+
+        &::before {
+            content   : '';
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+            width     : 100%;
+            height    : 100%;
+            background: linear-gradient(transparent, #FFF);
+        }
+
+        & .sponsor__title {
+            position     : relative;
+            margin-bottom: 70px;
+
+            &-top {
+                font-family: inherit;
+                font-size  : 4rem;
+                font-weight: 900;
+                color      : #667b8e;
+                margin     : 0;
+                line-height: 1;
+            }
+
+            &-bottom {
+                font-family: inherit;
+                font-size  : 8rem;
+                font-weight: 900;
+                color      : #667b8e;
+                margin     : 0;
+                line-height: 1;
+            }
+        }
+    }
+
+    .sponsor__form {
+        padding: 1rem 0;
+
+        &-top {
+            padding-left: 2rem;
+            text-align  : left;
+            font-size   : 5rem;
+            font-weight : 900;
+            color       : #f78421;
+            margin      : 0;
+            line-height : 1;
+        }
+
+        &-middle {
+            padding-left: 0;
+            text-align  : left;
+            font-size   : 8rem;
+            font-weight : 900;
+            color       : #f78421;
+            margin      : 0;
+            line-height : 6.7rem;
+        }
+
+        &-middle:nth-child(3) {
+            padding-left: 120px;
+            font-size   : 9rem;
+        }
+
+        &-bottom {
+            padding-left: 0;
+            text-align  : left;
+            font-size   : 6.5rem;
+            font-weight : 900;
+            color       : #f78421;
+            margin      : 0;
+            line-height : 1;
+        }
+
+        & .sponsor__bar {
+            position        : relative;
+            width           : 80%;
+            height          : 50px;
+            background-color: #f78421;
+            margin-top      : 20px;
+        }
+
+        & .form-control {
+            border-radius: 0;
+            border       : 2px solid #e5ebef;
+
+            &:focus {
+                border-color: #ea7f21;
+                outline     : none;
+                box-shadow  : none;
+            }
+        }
+
+        & .btn-orange {
+            background-color: #f78421;
+            color           : #FFF;
+            border-radius   : 0;
+        }
+    }
+}
+
+.sponsors-carousel {
+    &__title {
+        font-weight: 400;
+        text-align : center;
+        color      : #f78421;
+    }
+}
