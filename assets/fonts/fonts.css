@@ -1,1 +1,35 @@
-@font-face{font-family:Acumin;font-style:normal;font-weight:400;src:local('Acumin'),url("./Acumin-RPro.woff") format('woff')}@font-face{font-family:Acumin;font-style:italic;font-weight:400;src:local('Acumin'),url("./Acumin-ItPro.woff") format('woff')}@font-face{font-family:Acumin;font-style:normal;font-weight:700;src:local('Acumin'),url("./Acumin-BdPro.woff") format('woff')}@font-face{font-family:Acumin;font-style:italic;font-weight:700;src:local('Acumin'),url("./Acumin-BdItPro.woff") format('woff')}
+
+@font-face {
+    font-family: 'Acumin';
+    font-style : normal;
+    font-weight: normal;
+    src        : local('Acumin'),
+    url("./Acumin-RPro.woff") format('woff');
+}
+
+
+@font-face {
+    font-family: 'Acumin';
+    font-style : italic;
+    font-weight: normal;
+    src        : local('Acumin'),
+    url("./Acumin-ItPro.woff") format('woff');
+}
+
+
+@font-face {
+    font-family: 'Acumin';
+    font-style : normal;
+    font-weight: bold;
+    src        : local('Acumin'),
+    url("./Acumin-BdPro.woff") format('woff');
+}
+
+
+@font-face {
+    font-family: 'Acumin';
+    font-style : italic;
+    font-weight: bold;
+    src        : local('Acumin'),
+        url("./Acumin-BdItPro.woff") format('woff');
+}

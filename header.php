@@ -98,13 +98,13 @@
                                 <a class="nav-link" href="#">Programação <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Notícias</a>
+                                <a class="nav-link" href="/noticias">Notícias</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/seja-um-patrocinador">Seja Patrocinador</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">A Rádio Benfica</a>
+                                <a class="nav-link" href="/a-radio-benfica">A Rádio Benfica</a>
                             </li>
                         </ul>
                     </div>
