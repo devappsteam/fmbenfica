@@ -599,11 +599,15 @@
         margin-bottom: 20px;
     }
 
-    .about__text>* {
-        text-align : justify;
-        font-size  : 1.6rem;
-        color      : #647b8d;
-        line-height: 2rem;
-        padding    : 2rem 0;
+    .about__text {
+        position: relative;
+        padding : 2rem 0;
+
+        &>* {
+            text-align : justify;
+            font-size  : 1.6rem;
+            color      : #647b8d;
+            line-height: 2rem;
+        }
     }
 }
