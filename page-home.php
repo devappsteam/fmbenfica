@@ -78,10 +78,19 @@ get_header();
                         foreach ($programings as $programing) {
                             setup_postdata($programing);
                             $info = get_post_meta($programing->ID, '_programacao', true);
+                            $borders = array(
+                                1 => 'right',
+                                2 => 'left',
+                                3 => 'top',
+                                4 => 'bottom'
+                            );
+
+                            $border = rand(1, 4);
+
                     ?>
                             <div class="item">
                                 <div class="programing__card">
-                                    <div class="programing__image border--right rounded-circle" style="background-image: url('<?php echo $info['programing_image']?>');"></div>
+                                    <div class="programing__image border--<?php echo $borders[$border]; ?> rounded-circle" style="background-image: url('<?php echo $info['programing_image'] ?>');"></div>
                                     <div class="programing__info">
                                         <h3 class="programing__title"><?php echo $programing->post_title; ?></h3>
                                         <p class="programing__announcer"><?php echo $info['programing_author'] ?></p>
