@@ -1,22 +1,26 @@
 <div class="container">
     <?php
-    
-    if (have_posts()) :
-        while (have_posts()) : the_post();
+
+    $args = array(
+        'post_type' => 'programacao',
+        'post_status' => array('publish'),
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+    $programings = new WP_Query($args);
+
+    if ($programings->have_posts()) :
+        while ($programings->have_posts()) : $programings->the_post();
     ?>
             <div class="row my-5">
                 <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center">
-                    <a href="<?php the_permalink(); ?>" class="posts__link">
-                        <div class="posts-thumbnail">
-                            <?php
-                            $thumbnail = get_template_directory_uri() . '/assets/images/logo.png';
-                            if (has_post_thumbnail()) {
-                                $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                            }
-                            ?>
-                            <img src="<?php echo $thumbnail; ?>" class="img-fluid">
-                        </div>
-                    </a>
+                    <?php
+                    $thumbnail = get_template_directory_uri() . '/assets/images/logo.png';
+                    if (has_post_thumbnail()) {
+                        $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    }
+                    ?>
+                    <div class="posts-thumbnail" style="background-image:url('<?php echo $thumbnail; ?>');"></div>
                 </div>
                 <div class="col-12 col-lg-7">
                     <div class="posts-info">

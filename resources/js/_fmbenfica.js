@@ -31,6 +31,34 @@
                 }
             }
         });
+
+
+        $('#programing_carousel').owlCarousel({
+            loop: false,
+            rewind: true,
+            margin: 30,
+            nav: false,
+            dots: true,
+            items: 4,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            autoplayHoverPause: true,
+            lazyLoad: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: true,
+                },
+                600: {
+                    items: 2,
+                    dots: true,
+                },
+                1000: {
+                    items: 4,
+                    dots: true,
+                }
+            }
+        });
     });
 
 })(jQuery);

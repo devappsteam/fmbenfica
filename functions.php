@@ -93,3 +93,99 @@ function fmbenfica_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'fmbenfica_scripts');
+
+
+function programing_type()
+{
+    $labels = array(
+        'name'                => __('Programações', 'fmbenfica'),
+        'singular_name'       => __('Programação', 'fmbenfica'),
+        'menu_name'           => __('Programações', 'fmbenfica'),
+        'parent_item_colon'   => __('Programação', 'fmbenfica'),
+        'all_items'           => __('Todas as Programações', 'fmbenfica'),
+        'view_item'           => __('Ver Programação', 'fmbenfica'),
+        'add_new_item'        => __('Adicionar Programação', 'fmbenfica'),
+        'add_new'             => __('Adicionar Programação', 'fmbenfica'),
+        'edit_item'           => __('Editar Programação', 'fmbenfica'),
+        'update_item'         => __('Atualizar Programalção', 'fmbenfica'),
+        'search_items'        => __('Pesquisar Programação', 'fmbenfica'),
+        'not_found'           => __('Nenhuma programação encontrada!', 'fmbenfica'),
+        'not_found_in_trash'  => __('Nenhuma programação encontrada!', 'fmbenfica'),
+    );
+
+    $args = array(
+        'label'               => __('programing', 'fmbenfica'),
+        'description'         => __('Programação da rádio', 'fmbenfica'),
+        'labels'              => $labels,
+        'supports'            => array('title', 'editor', 'thumbnail'),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-format-video',
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+
+    );
+    register_post_type('programacao', $args);
+}
+
+add_action('init', 'programing_type', 0);
+
+
+function metabox_programacao()
+{
+    add_meta_box(
+        'programacao_box_id',
+        'Informações da Programação',
+        'metabox_programacao_html',
+        'programacao'
+    );
+}
+
+function metabox_programacao_html($post)
+{
+    include('template_parts/admin/info_programacao.php');
+}
+
+add_action('add_meta_boxes', 'metabox_programacao');
+
+function admin_style_css()
+{
+
+    // Upload de Imagens
+    wp_enqueue_media();
+
+    wp_enqueue_style('fmbenfica-admin', get_template_directory_uri() . '/assets/css/admin.css', array(), '24032022');
+
+    //Registra os scripts
+    wp_enqueue_script('fmbenfica-admin', get_template_directory_uri() . '/assets/js/admin.js', array('jquery', 'media-upload', 'thickbox'), true);
+}
+
+add_action('admin_enqueue_scripts', 'admin_style_css');
+
+
+
+function save_metadata_programacao($post_id)
+{
+    $data = array(
+        'programing_author' => addslashes($_POST['programing_author']),
+        'programing_datetime' => addslashes($_POST['programing_datetime']),
+        'programing_image' => $_POST['programing_image']
+    );
+
+    update_post_meta(
+        $post_id,
+        '_programacao',
+        $data
+    );
+}
+
+add_action('save_post_programacao', 'save_metadata_programacao');
